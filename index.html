@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Health360 is a Tableau dashboard for exploring healthcare data, patient demographics, medical conditions, admissions, test results, and billing trends.">
+    <title>Health360 | Healthcare Analytics Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f8fb;
+            color: #243447;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #063b5c, #087e8b);
+            color: white;
+            padding: 22px 7%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px;
+            background: linear-gradient(135deg, #e0f7fa, #eaf3ff);
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            color: #063b5c;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: 0 auto 25px;
+            color: #475569;
+            font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #087e8b;
+            color: white;
+            text-decoration: none;
+            padding: 13px 24px;
+            border-radius: 7px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #063b5c;
+        }
+
+        section {
+            padding: 55px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #063b5c;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #64748b;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(15, 45, 70, 0.08);
+        }
+
+        .card h3 {
+            color: #087e8b;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-section {
+            background: white;
+        }
+
+        .dashboard-frame {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #dbe5ec;
+            border-radius: 10px;
+            background: #f8fafc;
+        }
+
+        .dashboard-actions {
+            text-align: center;
+            margin-top: 22px;
+        }
+
+        .about-box {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(15, 45, 70, 0.08);
+        }
+
+        .about-box ul {
+            padding-left: 22px;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            background: #063b5c;
+            color: white;
+            padding: 25px 15px;
+        }
+
+        footer a {
+            color: #a5f3fc;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            nav {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            section {
+                padding: 40px 5%;
+            }
+
+            .hero {
+                padding: 55px 18px;
+            }
+
+            .dashboard-frame {
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Health360</div>
+
+            <div>
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <h1>Health360 Healthcare Analytics</h1>
+
+            <p>
+                Explore healthcare data through interactive visualizations.
+                Discover patient demographics, medical conditions, admission
+                patterns, test results, and billing trends in one place.
+            </p>
+
+            <a class="button" href="#dashboard">Explore Dashboard</a>
+
+            <a class="button"
+               href="https://public.tableau.com/app/profile/anishika.tiwari/viz/Health360/Health360?publish=yes"
+               target="_blank"
+               rel="noopener noreferrer">
+                Open on Tableau Public
+            </a>
+        </section>
+
+        <section id="features">
+            <h2 class="section-title">Project Features</h2>
+
+            <p class="section-description">
+                An interactive healthcare data exploration project
+                built using Tableau Public.
+            </p>
+
+            <div class="features">
+                <div class="card">
+                    <h3>Patient Demographics</h3>
+                    <p>
+                        Explore patient age groups and gender distribution
+                        to understand the composition of the dataset.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Medical Conditions</h3>
+                    <p>
+                        Examine the distribution of recorded medical
+                        conditions and medication categories.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Admission Analysis</h3>
+                    <p>
+                        Explore admission types and compare patterns
+                        across available patient categories.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Billing Insights</h3>
+                    <p>
+                        Analyze billing amounts and compare healthcare
+                        costs across hospitals in the dataset.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-section" id="dashboard">
+            <h2 class="section-title">Interactive Dashboard</h2>
+
+            <p class="section-description">
+                Use the embedded Tableau dashboard below to explore
+                the healthcare data. You can also open it directly
+                on Tableau Public.
+            </p>
+
+            <iframe
+                class="dashboard-frame"
+                src="https://public.tableau.com/views/Health360/Health360?:showVizHome=no"
+                title="Health360 Tableau Healthcare Dashboard"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+
+            <div class="dashboard-actions">
+                <a class="button"
+                   href="https://public.tableau.com/app/profile/anishika.tiwari/viz/Health360/Health360?publish=yes"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    View Full Dashboard
+                </a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About the Project</h2>
+
+            <div class="about-box">
+                <p>
+                    <strong>Health360</strong> is a healthcare analytics
+                    project created to visualize and explore healthcare
+                    dataset information using Tableau Public.
+                </p>
+
+                <ul>
+                    <li>Patient demographics and age distribution</li>
+                    <li>Medical conditions and medications</li>
+                    <li>Admission types and test results</li>
+                    <li>Hospital-wise billing trends</li>
+                </ul>
+
+                <p style="margin-top: 18px;">
+                    The dashboard supports exploratory analysis of the
+                    available data. It is intended for educational and
+                    informational purposes, not for medical diagnosis.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Health360 | Healthcare Data Analytics Project</p>
+        <p>Dashboard powered by Tableau Public</p>
+    </footer>
+
+</body>
+</html>
